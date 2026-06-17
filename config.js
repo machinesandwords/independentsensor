@@ -1,20 +1,20 @@
 /**
  * config.js — Site identity and accent color configuration
- * nonhumanidentitysoftware.com
+ * independentsensor.com
  *
- * accent:     #7B3FA6  (purple)
- * accentDim:  #5C2E7D  (~15% darker)
- * accentPale: #F0E8F7  (very light tint, used for callout backgrounds)
+ * accent:     #0A7E6A  (teal)
+ * accentDim:  #087558  (~15% darker)
+ * accentPale: #e6f4f1  (very light tint, used for callout backgrounds)
  */
 
 window.SITE_CONFIG = {
-  name:      "Non-Human Identity Software",
-  nameHtml:  "Non-Human <span>Identity</span> Software",
-  domain:    "nonhumanidentitysoftware.com",
-  tagline:   "Independent guidance for NHI security buyers",
-  accent:    "#7B3FA6",
-  accentDim: "#5C2E7D",
-  accentPale:"#F0E8F7"
+  name:      "The Independent Sensor",
+  nameHtml:  "The Independent <span>Sensor</span>",
+  domain:    "independentsensor.com",
+  tagline:   "Industrial software intelligence for OT architects",
+  accent:    "#0A7E6A",
+  accentDim: "#087558",
+  accentPale:"#e6f4f1"
 };
 
 (function() {
