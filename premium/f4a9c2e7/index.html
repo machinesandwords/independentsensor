@@ -6,7 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
 
-  <title>Welcome | The Independent Sensor</title>
+  <title>Issue 01 — July 2026 | The Independent Sensor</title>
   <meta name="robots" content="noindex, nofollow">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,13 +18,18 @@
   <script src="/config.js" defer></script>
 
   <style>
-    .welcome-hero {
+    .issue-header {
       padding: 48px 0 40px;
       border-bottom: var(--hairline);
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
-    .welcome-confirm {
-      display: inline-block;
+    .issue-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .issue-label {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -32,78 +37,262 @@
       color: white;
       background: var(--accent);
       padding: 4px 10px;
-      margin-bottom: 20px;
+      display: inline-block;
     }
-    .welcome-hero h1 {
-      font-size: 20px;
+    .issue-date {
+      font-size: var(--small);
+      color: var(--faint);
+    }
+    .issue-header h1 {
+      font-size: 22px;
       font-weight: 700;
-      line-height: 1.3;
+      line-height: 1.25;
       color: var(--charcoal);
       margin-bottom: 16px;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
-    .welcome-hero p {
-      font-size: var(--small);
-      color: var(--mid);
+    .issue-header .lead {
       margin-bottom: 0;
     }
 
-    .welcome-section {
+    .section-marker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .section-marker-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .section-marker-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .spotlight-item {
       margin-bottom: 40px;
       padding-bottom: 40px;
       border-bottom: var(--hairline);
     }
-    .welcome-section:last-child {
+    .spotlight-item:last-child {
       border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
-    .welcome-section h2 {
+    .spotlight-item h2 {
       font-size: var(--h2);
       font-weight: 700;
       color: var(--charcoal);
-      margin-bottom: 12px;
       margin-top: 0;
+      margin-bottom: 4px;
+      padding-top: 0;
+      border-top: none;
+      letter-spacing: -0.01em;
+    }
+    .spotlight-item .item-category {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .spotlight-item p {
+      font-size: var(--small);
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .spotlight-item p:last-child {
+      margin-bottom: 0;
+    }
+
+    .takeaway {
+      background: var(--surface);
+      border: var(--hairline);
+      border-left: 3px solid var(--accent);
+      padding: 16px 20px;
+      margin-top: 20px;
+    }
+    .takeaway-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .takeaway p {
+      font-size: var(--small);
+      color: var(--charcoal);
+      margin-bottom: 0;
+      line-height: 1.8;
+    }
+
+    .bluesky-item {
+      background: var(--bg);
+      border: var(--hairline);
+      padding: 20px 24px;
+      margin-top: 40px;
+    }
+    .bluesky-item h2 {
+      font-size: var(--h2);
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-top: 0;
+      margin-bottom: 4px;
       padding-top: 0;
       border-top: none;
     }
-    .welcome-section p {
+    .bluesky-item .item-category {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .bluesky-item p {
       font-size: var(--small);
       color: var(--mid);
-      margin-bottom: 12px;
       line-height: 1.8;
+      margin-bottom: 12px;
     }
-    .welcome-section p:last-child {
+    .bluesky-item p:last-child {
       margin-bottom: 0;
     }
 
-    .whitelist-block {
+    .article-section {
+      margin-top: 56px;
+      padding-top: 48px;
+      border-top: 2px solid var(--charcoal);
+    }
+    .article-section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--charcoal);
+      margin-top: 0;
+      margin-bottom: 8px;
+      padding-top: 0;
+      border-top: none;
+      letter-spacing: -0.02em;
+    }
+    .article-section .article-deck {
+      font-size: var(--small);
+      color: var(--mid);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .article-section h3 {
+      font-size: var(--h3);
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    .article-section p {
+      font-size: var(--small);
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .article-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .rfp-questions {
+      margin-top: 8px;
+    }
+    .rfp-question {
+      border: var(--hairline);
+      background: var(--surface);
+      margin-bottom: 12px;
+    }
+    .rfp-question-q {
+      font-size: var(--small);
+      font-weight: 700;
+      color: var(--charcoal);
+      padding: 14px 20px;
+      border-bottom: var(--hairline);
+      line-height: 1.6;
+    }
+    .rfp-question-a {
+      padding: 12px 20px;
+    }
+    .rfp-question-a .answer-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .rfp-question-a p {
+      font-size: var(--small);
+      color: var(--mid);
+      margin-bottom: 0;
+      line-height: 1.75;
+    }
+
+    .issue-closing {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: var(--hairline);
+    }
+    .issue-closing p {
+      font-size: var(--small);
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .issue-closing p:last-child {
+      margin-bottom: 0;
+    }
+    .next-issue {
       background: var(--accent-pale);
       border: 1px solid var(--accent);
       padding: 16px 20px;
-      margin-top: 16px;
+      margin-top: 20px;
     }
-    .whitelist-block p {
+    .next-issue-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .next-issue p {
       font-size: var(--small);
       color: var(--charcoal);
-      margin-bottom: 8px;
-    }
-    .whitelist-block p:last-child {
       margin-bottom: 0;
-    }
-    .whitelist-address {
-      font-weight: 700;
-      color: var(--accent);
+      line-height: 1.8;
     }
 
-    .archive-note {
-      background: var(--surface);
-      border: var(--hairline);
-      padding: 16px 20px;
-      margin-top: 16px;
-    }
-    .archive-note p {
-      font-size: var(--small);
-      color: var(--mid);
-      margin-bottom: 0;
+    @media print {
+      .topbar, footer { display: none; }
+      .layout { padding-top: 0; }
+      .main { margin-left: 0; padding: 32px; }
+      .issue-header { padding-top: 0; }
+      body { background: white; }
+      .rfp-question, .takeaway, .bluesky-item, .next-issue {
+        break-inside: avoid;
+      }
+      .table-wrap { overflow-x: visible; }
+      @page {
+        margin: 1in;
+      }
     }
   </style>
 </head>
@@ -113,45 +302,143 @@
     <div class="topbar-brand">The Independent <span>Sensor</span></div>
     <div class="topbar-divider"></div>
     <div class="topbar-tagline">industrial software intelligence for OT architects</div>
+    <div class="topbar-right"><a href="/premium/">Archive</a></div>
   </header>
 
   <div class="layout">
     <main class="main" style="margin-left:0;">
       <article class="content">
 
-        <div class="welcome-hero">
-          <span class="welcome-confirm">Subscription confirmed</span>
-          <h1>You're in. Here's what happens next.</h1>
-          <p>Welcome to The Independent Sensor paid tier. Independent analysis of emerging industrial software categories, without vendor relationships or advertiser obligations.</p>
+        <!-- Issue header -->
+        <div class="issue-header">
+          <div class="issue-meta">
+            <span class="issue-label">Issue 01</span>
+            <span class="issue-date">July 2026</span>
+          </div>
+          <h1>Nobody is buying plug-and-play anymore</h1>
+          <p class="lead">Accenture panic-buys 650+ engineers and Samsung dreams big.</p>
         </div>
 
-        <div class="welcome-section">
-          <h2>Your first issue</h2>
-          <p>The Independent Sensor publishes biweekly. Your first issue will arrive at the email address you used to subscribe. Each issue covers what's changing in the industrial software landscape and what it means for your evaluations and existing commitments.</p>
-          <p>Each issue is delivered directly to your inbox. The link in each email is your permanent access to that issue.</p>
+        <!-- Sector Spotlight -->
+        <div class="section-marker">
+          <span class="section-marker-label">Sector Spotlight</span>
+          <span class="section-marker-rule"></span>
         </div>
 
-        <div class="welcome-section">
-          <h2>Whitelist the sender</h2>
-          <p>To make sure issues don't land in spam or promotions, add the sender address to your contacts or whitelist now.</p>
-          <div class="whitelist-block">
-            <p>Add this address to your contacts:</p>
-            <p class="whitelist-address">editor@independentsensor.com</p>
-            <p>In Gmail: open an issue, click the three dots in the top right, select "Filter messages like this," then "Never send to spam."</p>
+        <p style="font-size:var(--small);color:var(--mid);margin-bottom:32px;line-height:1.8;">Welcome to the summer of agentic AI at the edge, marked by a flurry of announcements from major OT software and silicon vendors rolling out next-generation architectures designed for localized, heavy edge-inference. Real innovation or existing features with new names? It&rsquo;s a mix.</p>
+
+        <!-- Accenture -->
+        <div class="spotlight-item">
+          <span class="item-category">M&amp;A / Systems Integration</span>
+          <h2>Accenture Panic-Buys 650+ Engineers</h2>
+          <p>Accenture is buying Industries eXcellence Group (IndX), a massive engineering division that specializes almost entirely in deploying Siemens Digital Industries software stacks. IndX has no proprietary software to offer &ndash; its apparent appeal is its workforce of 650+ specialists in PLM, digital twins, and SCADA frameworks.</p>
+          <p>This is a major structural play for enterprise deployment scale. Accenture is integrating IndX and its 650+ specialists directly into its dedicated Accenture Siemens Business Group to scale industrial AI, digital twins, and edge computing across IT/OT boundaries.</p>
+          <p>For OT technologists, this means the massive consulting power is shifting heavily toward deploying containerized, software-defined industrial stacks (PLM, SCADA, and edge) rather than legacy cloud migrations. It indicates that the industry is gearing up for complex, floor-level infrastructure modernizations. But there&rsquo;s no proprietary software here.</p>
+          <div class="takeaway">
+            <span class="takeaway-label">Your takeaway</span>
+            <p>If the massive integrators are buying up specialized OT engineering talent just to survive the deployment phase, that tells you everything you need to know about the current market. Do not trust a vendor who claims their edge platform is &ldquo;plug-and-play.&rdquo; If Accenture needs 650 discrete-manufacturing specialists to scale their Siemens practice, your deployment is going to require deep, localized architectural sweat, not a cloud template. Bye-bye, dashboard team.</p>
           </div>
         </div>
 
-        <div class="welcome-section">
-          <h2>Your archive</h2>
-          <p>Every issue is archived here. As issues are published they'll appear below, organized by date. You'll always be able to reference past analysis from this page.</p>
-          <div class="archive-note">
-            <p>Your first issue is coming soon. Check back here after it arrives — the archive link will be in the email.</p>
+        <!-- Telit -->
+        <div class="spotlight-item">
+          <span class="item-category">Edge Software / IIoT Platforms</span>
+          <h2>Telit Spices Up Existing Product with Some AI</h2>
+          <p>Telit Cinterion announced a massive feature drop for its flagship deviceWISE Intelligence Suite, introducing native Agentic AI on the Edge for IIoT. Instead of merely forwarding data to a cloud-based anomaly detector, Telit says its software platform now embeds autonomous AI agents directly at the factory edge to monitor local operations, run fault detection, and handle local orchestration entirely offline.</p>
+          <p>But if a vendor tries to sell you deviceWISE by claiming its built-in AI will magically run your plant floor autonomously, smile and negotiate the price down. The &ldquo;out-of-the-box&rdquo; autonomous orchestration is a rebrand of classic edge logic and local vision models.</p>
+          <p>If you are evaluating the platform as an architectural foundation for your own AI roadmap, it&rsquo;s a strong buy. Their edge gateway is positioned as an agnostic context provider, allowing you to plug in whatever state-of-the-art model comes out next year without rewriting your industrial data pipeline. By building an edge infrastructure that speaks MCP natively, they are saving your internal software teams months of custom data-plumbing work.</p>
+        </div>
+
+        <!-- Samsung -->
+        <div class="bluesky-item">
+          <span class="item-category">AI Blue Sky?</span>
+          <h2>Samsung Sets a 2030 Deadline</h2>
+          <p>Samsung announced a hard corporate mandate to transition to completely all-AI automated factories by 2030. Their strategy relies on deploying autonomous edge agents for localized quality control, production planning, and logistics — and on persuading their entire supply chain that passive IoT hardware is a legacy concept.</p>
+          <p>The mandate raises a specific operational question that Samsung&rsquo;s press release doesn&rsquo;t answer: who owns the failure mode when an autonomous agent modifies a production sequence, introduces an unpredicted variable, or shuts down a line in a brownfield plant in Vietnam or Brazil? A human operator who overrides a bad decision is a known cost. An autonomous system that produces an unknown edge case at 2 AM is a different liability category entirely.</p>
+          <p>Four years is not enough time to answer that question at Samsung&rsquo;s scale. It may be enough time to learn it the hard way.</p>
+        </div>
+
+        <!-- Article -->
+        <div class="article-section">
+          <div class="section-marker" style="margin-bottom:20px;">
+            <span class="section-marker-label">Article</span>
+            <span class="section-marker-rule"></span>
+          </div>
+          <h2>Hardware-Defined vs. Software-Defined: The Architect&rsquo;s RFP Framework for Industrial AI Platforms</h2>
+          <p class="article-deck">Raw compute power is a commodity; resource isolation and architectural decoupling are what prevent operational downtime. If a vendor sells an &ldquo;AI-enabled industrial gateway&rdquo; where a heavy, non-deterministic Vision-Language-Action (VLA) model shares the same kernel space or compute threads as a critical data-logging loop or PLC communication channel, they are selling a liability. A single inference timeout or memory leak from an AI model could drop the connection to the plant floor.</p>
+
+          <h3>Architecture Evaluation Matrix</h3>
+          <p>Use this copy-pasteable framework to quickly evaluate vendors during an RFP or architectural review.</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Evaluation Vector</th>
+                  <th>The Legacy Trap: Strictly Coupled</th>
+                  <th>The Strategic Buy: Decoupled Software-Defined</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Compute &amp; Compute Isolation</strong></td>
+                  <td>AI inference, data ingestion, and protocol translation share a single monolithic OS/kernel footprint without strict hardware-level partitioning.</td>
+                  <td>Uses a Type-1 Hypervisor or strict hardware partitioning to completely isolate the Real-Time OS (RTOS) from the Linux/Container space running the AI models.</td>
+                </tr>
+                <tr>
+                  <td><strong>Resource Utilization Headroom</strong></td>
+                  <td>Platform scales at &ge;70% CPU/NPU utilization at initial deployment. Lower upfront cost, but zero room for model growth.</td>
+                  <td>Platform is over-provisioned to run at &le;40% utilization on Day 1. Upfront hardware premium saves a massive forklift upgrade in 3&ndash;5 years.</td>
+                </tr>
+                <tr>
+                  <td><strong>Vendor Interoperability &amp; Lock-In</strong></td>
+                  <td>Proprietary container orchestration or edge management software that restricts you to the vendor&rsquo;s own cloud or hardware ecosystem.</td>
+                  <td>Open, container-native edge platforms (e.g., standard K3s, OCI-compliant containers) that abstract the software from the underlying edge silicon.</td>
+                </tr>
+                <tr>
+                  <td><strong>Failure Mode Behavior</strong></td>
+                  <td>An inference freeze or memory leak in the AI application layer can starve the gateway&rsquo;s communication threads, causing data loss or dropped PLC connections.</td>
+                  <td>An AI application crash or container panic leaves the core data-routing and deterministic communication layers completely unaffected.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>3 Questions to Put in an RFP</h3>
+          <p>Ask vendors these exact questions during a technical deep-dive or live proof-of-concept (POC):</p>
+
+          <div class="rfp-questions">
+            <div class="rfp-question">
+              <div class="rfp-question-q">&ldquo;Can you demonstrate a total application crash or memory leak inside the local VLA/AI container during active telemetry ingestion? Show us how the underlying MQTT/OPC UA data loop behaves when the container panics.&rdquo;</div>
+              <div class="rfp-question-a">
+                <span class="answer-label">What the buyer is looking for</span>
+                <p>Total isolation. The data pipeline to the SCADA or cloud system should not drop a single packet, fluctuate in latency, or experience jitter while the AI layer reboots.</p>
+              </div>
+            </div>
+            <div class="rfp-question">
+              <div class="rfp-question-q">&ldquo;What is the exact architectural mechanism used to ensure a non-deterministic AI inference call (which can take 100ms+) never blocks a deterministic control or ingestion loop requiring sub-5ms latency?&rdquo;</div>
+              <div class="rfp-question-a">
+                <span class="answer-label">What the buyer is looking for</span>
+                <p>Asynchronous, state-buffered communication. If the vendor says &ldquo;our processor is fast enough to handle both linearly,&rdquo; they don&rsquo;t understand industrial environments.</p>
+              </div>
+            </div>
+            <div class="rfp-question">
+              <div class="rfp-question-q">&ldquo;If we want to swap out your proprietary anomaly detection model for an open-source or custom-built VLA model 2 years from now, walk us through the exact container deployment process. Do we require your engineering services to rebuild the firmware?&rdquo;</div>
+              <div class="rfp-question-a">
+                <span class="answer-label">What the buyer is looking for</span>
+                <p>OCI compliance and open container standards. The edge software should act as an agnostic runtime environment, not a closed black box.</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="welcome-section">
-          <h2>Questions</h2>
-          <p>Reply to any issue email or write to <a href="mailto:editor@independentsensor.com">editor@independentsensor.com</a>. Questions about your subscription, billing, or cancellation go to the same address.</p>
+        <!-- Closing -->
+        <div class="issue-closing">
+          <p>Thanks for reading the inaugural issue of The Independent Sensor. If a peer forwarded this to you, visit <a href="https://independentsensor.com/subscribe">independentsensor.com/subscribe</a> to get industry analyses and practical tools delivered to your inbox twice monthly.</p>
+          <div class="next-issue">
+            <span class="next-issue-label">Next issue</span>
+            <p>We go deep on Air-Gapped Identity — how to manage non-human identities (NHIs) and secure machine-to-machine authentication when the factory floor completely loses its cloud connection. We also look at whether ARBOR&rsquo;s bet on Intel is a strategic foundation or a platform trap. See you then.</p>
+          </div>
         </div>
 
       </article>
@@ -160,10 +447,10 @@
 
   <footer>
     <div class="footer-inner">
-      <span class="page-label">The Independent Sensor</span>
+      <span class="page-label">The Independent Sensor — Issue 01, July 2026</span>
       <p>An independent publication. Built by <a href="https://machinesandwords.com">Machines &amp; Words</a>.</p>
     </div>
   </footer>
 
 </body>
-</html>  
+</html>
